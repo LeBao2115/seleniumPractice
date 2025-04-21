@@ -18,6 +18,12 @@ public class BasePage {
         webDriver.findElement(locator).click();
     }
 
+    protected void clickDynamicElement(String locator, String name){
+        String dropdownXpath = String.format(locator,name);
+        By dropdown = By.xpath(dropdownXpath);
+        webDriver.findElement(dropdown).click();
+    }
+
     protected void scrollToElement(By locator){
         WebElement scrollElement = webDriver.findElement(locator);
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView(true);", scrollElement);
