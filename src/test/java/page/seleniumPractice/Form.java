@@ -12,8 +12,8 @@ public class Form extends BasePage {
     }
 
     public void MoveToAlertFrameWindow(){
-        clickDynamicElement(stringDropdownXpath," Alerts, Frames & Windows ");
-        clickDynamicElement(stringSubDropdownXpath," Frames");
+        clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
+        clickDynamicElement(stringSubDropdownXpath,"Frames");
     }
 
 

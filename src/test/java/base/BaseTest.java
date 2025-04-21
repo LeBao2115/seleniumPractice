@@ -27,7 +27,7 @@ public class BaseTest {
     public void tearDown(){
         // Close the browser after each test
         if (webDriver != null) {
-            webDriver.quit();
+//            webDriver.quit();
         }
     }
 
