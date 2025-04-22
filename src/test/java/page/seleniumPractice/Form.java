@@ -15,6 +15,4 @@ public class Form extends BasePage {
         clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
         clickDynamicElement(stringSubDropdownXpath,"Frames");
     }
-
-
 }

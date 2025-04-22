@@ -36,4 +36,8 @@ public class BaseTest {
         byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
         Allure.addAttachment(title, new ByteArrayInputStream(screenshot));
     }
+
+    public void switchTab(String title){
+        webDriver.switchTo().window(title);
+    }
 }
