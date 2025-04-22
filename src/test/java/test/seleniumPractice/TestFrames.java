@@ -33,7 +33,6 @@ public class TestFrames extends BaseTest {
         seleniumHomeTest.testNavigatePracticeWeb();
         form.MoveToAlertFrameWindow();
         takeScreenshot("MoveToAlertFrameWindow");
-
         // Find Element Before switch frame
         alertFrameWindow.SwitchToFrame(0);
         // Find Element Before switch frame
@@ -42,5 +41,4 @@ public class TestFrames extends BaseTest {
         switchTab(tabs.get(0));
         alertFrameWindow.clickNewTabFrame1();
     }
-
 }

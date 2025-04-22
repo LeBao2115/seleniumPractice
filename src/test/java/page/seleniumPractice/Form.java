@@ -15,4 +15,10 @@ public class Form extends BasePage {
         clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
         clickDynamicElement(stringSubDropdownXpath,"Frames");
     }
+
+    public void MoveToBrowserWindow(){
+        clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
+        clickDynamicElement(stringSubDropdownXpath,"Browser Windows");
+    }
+
 }
