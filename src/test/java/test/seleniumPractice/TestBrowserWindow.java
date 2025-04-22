@@ -28,9 +28,25 @@ public class TestBrowserWindow extends BaseTest {
         seleniumHomeTest.testNavigatePracticeWeb();
         form.MoveToBrowserWindow();
         takeScreenshot("MoveToBrowserWindow");
+
+        // New Tab
         browserWindows.clickNewTab();
         ArrayList<String> tabList = new ArrayList<String>(webDriver.getWindowHandles());
         switchTab(tabList.get(1));
         takeScreenshot("New Tab");
+        switchTab(tabList.get(0));
+
+        // New Window
+        browserWindows.clickNewWindow();
+        tabList = new ArrayList<String>(webDriver.getWindowHandles());
+        switchTab(tabList.get(2));
+        takeScreenshot("New Window");
+        switchTab(tabList.get(0));
+
+        // New Window Message
+        browserWindows.clickNewWindowMessage();
+        tabList = new ArrayList<String>(webDriver.getWindowHandles());
+        switchTab(tabList.get(2));
+        takeScreenshot("New Window Message");
     }
 }

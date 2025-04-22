@@ -4,8 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
+import java.time.Duration;
 
 public class BasePage {
     protected WebDriver webDriver;
@@ -21,6 +24,8 @@ public class BasePage {
     protected void clickDynamicElement(String locator, String name){
         String dropdownXpath = String.format(locator,name);
         By dropdown = By.xpath(dropdownXpath);
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(dropdown));
         webDriver.findElement(dropdown).click();
     }
 
