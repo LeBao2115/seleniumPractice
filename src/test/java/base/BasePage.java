@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.swing.*;
 import java.time.Duration;
 
 public class BasePage {
@@ -36,5 +35,10 @@ public class BasePage {
 
     protected void inputText(By locator,String text){
         webDriver.findElement(locator).sendKeys(text);
+    }
+
+    protected By dynamicLocator(String locator, String name){
+        String locationXpath = String.format(locator,name);
+        return By.xpath(locationXpath);
     }
 }

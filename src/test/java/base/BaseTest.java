@@ -40,4 +40,8 @@ public class BaseTest {
     public void switchTab(String title){
         webDriver.switchTo().window(title);
     }
+
+    public void delay30s(){
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    }
 }

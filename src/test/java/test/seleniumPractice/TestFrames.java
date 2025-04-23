@@ -1,23 +1,18 @@
 package test.seleniumPractice;
 
 import base.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.HomePage;
-import page.SeleniumHomePage;
-import page.seleniumPractice.AlertFrameWindow;
+import page.seleniumPractice.Frames;
 import page.seleniumPractice.Form;
 import test.SeleniumHomeTest;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TestFrames extends BaseTest {
     private Form form;
     private SeleniumHomeTest seleniumHomeTest;
-    private AlertFrameWindow alertFrameWindow;
+    private Frames alertFrameWindow;
 
     @BeforeMethod
     public void setUpPages() {
@@ -25,7 +20,7 @@ public class TestFrames extends BaseTest {
         seleniumHomeTest = new SeleniumHomeTest();
         seleniumHomeTest.setUpDriver(webDriver);
         seleniumHomeTest.setUpPages();
-        alertFrameWindow =  new AlertFrameWindow(webDriver);
+        alertFrameWindow =  new Frames(webDriver);
     }
 
     @Test

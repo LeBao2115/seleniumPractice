@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AlertFrameWindow extends BasePage {
+public class Frames extends BasePage {
 
     private By newTablnk = By.xpath("//a[@title='back to Selenium Tutorial']");
     private By iframe1 = By.xpath("//h2[text()='Iframe 2']/following-sibling::iframe");
 
-    public AlertFrameWindow(WebDriver webDriver) {
+    public Frames(WebDriver webDriver) {
         super(webDriver);
     }
 

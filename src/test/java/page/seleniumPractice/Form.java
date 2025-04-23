@@ -21,4 +21,9 @@ public class Form extends BasePage {
         clickDynamicElement(stringSubDropdownXpath,"Browser Windows");
     }
 
+    public void MoveToAlertPage(){
+        clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
+        clickDynamicElement(stringSubDropdownXpath,"Alerts");
+    }
+
 }
