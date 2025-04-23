@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.ByteArrayInputStream;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected WebDriver webDriver;
@@ -41,7 +42,8 @@ public class BaseTest {
         webDriver.switchTo().window(title);
     }
 
-    public void delay30s(){
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    public void delay10s(){
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 }

@@ -26,4 +26,13 @@ public class Form extends BasePage {
         clickDynamicElement(stringSubDropdownXpath,"Alerts");
     }
 
+    public void MoveToNestedFramePage(){
+        clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
+        clickDynamicElement(stringSubDropdownXpath,"Nested Frames");
+    }
+
+    public void MoveToModalDialogsPage(){
+        clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
+        clickDynamicElement(stringSubDropdownXpath,"Modal Dialogs");
+    }
 }
