@@ -44,6 +44,5 @@ public class BaseTest {
 
     public void delay10s(){
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
     }
 }
