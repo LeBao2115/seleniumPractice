@@ -21,6 +21,7 @@ public class SeleniumHomeTest extends BaseTest {
         seleniumHomePage = new SeleniumHomePage(webDriver);
     }
 
+    // kh nên gọi thẳng test
     @Test
     public void testNavigatePracticeWeb(){
         homePage.navigateSeleniumPage();

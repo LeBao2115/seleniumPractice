@@ -35,4 +35,9 @@ public class Form extends BasePage {
         clickDynamicElement(stringDropdownXpath,"Alerts, Frames & Windows");
         clickDynamicElement(stringSubDropdownXpath,"Modal Dialogs");
     }
+
+    public void MoveToUploadDownloadPage(){
+        clickDynamicElement(stringDropdownXpath,"Elements");
+        clickDynamicElement(stringSubDropdownXpath,"Upload and Download");
+    }
 }

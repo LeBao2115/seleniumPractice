@@ -1,6 +1,7 @@
 package page.seleniumPractice;
 
 import base.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Alert;
@@ -19,28 +20,34 @@ public class AlertPage extends BasePage {
         super(webDriver);
     }
 
+    @Step("wait For Alert")
     public void waitForAlert(){
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
+    @Step("click Button Alert")
     public void clickBtnAlert(int num){
         String numStr = String.valueOf(num);
         clickDynamicElement(btnAlertLocateString,numStr);
     }
 
+    @Step("Accept Alert")
     public void acceptAlert() {
         webDriver.switchTo().alert().accept();
     }
 
+    @Step("Dismiss Alert")
     public void dismissAlert() {
         webDriver.switchTo().alert().dismiss();
     }
 
+    @Step("input Alert")
     public void inputAlert(String text) {
         webDriver.switchTo().alert().sendKeys(text);
     }
 
+    @Step("get text alert")
     public String getTextAlert() {
         return webDriver.switchTo().alert().getText();
     }

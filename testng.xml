@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Inheritance Suite" verbose="1">
+    <test name="Inheritance Test">
+        <classes>
+            <class name="test.seleniumPractice.TestAlert" />
+        </classes>
+    </test>
+</suite>
