@@ -1,8 +1,10 @@
 package helper;
 
+import org.apache.pdfbox.Loader;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-
 import java.io.*;
 
 public class ReadDFiles {
@@ -69,10 +71,39 @@ public class ReadDFiles {
         outputStream.close();
     }
 
+    public static void verifyPDF(String filePath, String expectedString) {
+        try {
+            File file = new File(filePath);
+            if (!file.exists()) {
+                System.out.println("❌ File PDF không tồn tại tại: " + filePath);
+                return;
+            }
+
+            PDDocument document = Loader.loadPDF(file);
+            PDFTextStripper stripper = new PDFTextStripper();
+            stripper.setStartPage(1);
+            stripper.setEndPage(1);
+            String pdfText = stripper.getText(document);
+
+            if (pdfText.contains(expectedString)) {
+                System.out.println("✅ Chuỗi '" + expectedString + "' được tìm thấy trên trang 1 của file PDF!");
+            } else {
+                System.out.println("❌ Không tìm thấy chuỗi '" + expectedString + "' trên trang 1 của file PDF.");
+            }
+            document.close();
+        } catch (Exception e) {
+            System.out.println("❌ Lỗi khi xác thực file PDF: " + e.getMessage());
+        }
+    }
+
     public static void main(String[] args) throws IOException {
+        // Read + write data excel
         readExcel();
         String[] data = {"006", "lpab6", "123456788"};
         writeDateExcel(data);
         readExcel();
+
+        // Read + verify PDF
+        verifyPDF("src/test/resources/samplePDF.pdf","123456");
     }
 }
