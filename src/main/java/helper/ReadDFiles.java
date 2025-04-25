@@ -1,32 +1,27 @@
 package helper;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.*;
 
 public class ReadDFiles {
 
     public static void readExcel() throws IOException {
-        File execlFile = new File("src/main/resources/demo-data.xls");
-        FileInputStream inputStream = new FileInputStream(execlFile);
-        Workbook excelWorkbook = new HSSFWorkbook(inputStream);
-        Sheet sheet = excelWorkbook.getSheet("Sheet1");
-        int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
-        System.out.println("rowCount: " + rowCount);
+        FileInputStream inputStream = new FileInputStream("src/main/resources/demo-data.xls");
+        Workbook workbook = new HSSFWorkbook(inputStream); // dùng cho .xls
+        Sheet sheet = workbook.getSheetAt(0);
 
+        int rowCount = sheet.getLastRowNum();
         for (int i = 0; i <= rowCount; i++) {
             Row row = sheet.getRow(i);
+            if (row == null) continue;
             for (int j = 0; j < row.getLastCellNum(); j++) {
                 Cell cell = row.getCell(j);
                 if (cell == null) {
                     System.out.print("NULL || ");
                     continue;
                 }
-
                 switch (cell.getCellType()) {
                     case STRING:
                         System.out.print(cell.getStringCellValue() + " || ");
@@ -49,38 +44,35 @@ public class ReadDFiles {
                 }
             }
             System.out.println();
-            inputStream.close();
         }
+        workbook.close();
+        inputStream.close();
     }
 
     public static void writeDateExcel(String[] dataToWrite) throws IOException {
-        File execlFile = new File("src/main/resources/demo-data.xls");
-        FileInputStream inputStream = new FileInputStream(execlFile);
-        Workbook excelWorkbook = new HSSFWorkbook(inputStream);
-        Sheet sheet = excelWorkbook.getSheet("Sheet1");
-        int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
-        Row row = sheet.getRow(0);
-        Row newRow = sheet.createRow(rowCount+1);
-        for(int j = 0; j < row.getLastCellNum(); j++){
+        String path = "src/main/resources/demo-data.xls";
+        FileInputStream inputStream = new FileInputStream(path);
+        Workbook workbook = new HSSFWorkbook(inputStream);
+        Sheet sheet = workbook.getSheetAt(0);
 
-            //Fill data in row
-
-            Cell cell = newRow.createCell(j);
-
-            cell.setCellValue(dataToWrite[j]);
-
+        int newRowIdx = sheet.getLastRowNum() + 1;
+        Row newRow = sheet.createRow(newRowIdx);
+        for (int i = 0; i < dataToWrite.length; i++) {
+            Cell cell = newRow.createCell(i);
+            cell.setCellValue(dataToWrite[i]);
         }
-        inputStream.close();
-        FileOutputStream outputStream = new FileOutputStream(execlFile);
-        excelWorkbook.write(outputStream);
+
+        inputStream.close(); // luôn đóng input trước khi mở output
+        FileOutputStream outputStream = new FileOutputStream(path);
+        workbook.write(outputStream);
+        workbook.close();
         outputStream.close();
     }
 
     public static void main(String[] args) throws IOException {
         readExcel();
-        String[] Data = {"006","lpab6","123456788"};
-        writeDateExcel(Data);
+        String[] data = {"006", "lpab6", "123456788"};
+        writeDateExcel(data);
         readExcel();
     }
-
 }
