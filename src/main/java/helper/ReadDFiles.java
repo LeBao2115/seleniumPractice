@@ -15,17 +15,41 @@ public class ReadDFiles {
         FileInputStream inputStream = new FileInputStream(execlFile);
         Workbook excelWorkbook = new HSSFWorkbook(inputStream);
         Sheet sheet = excelWorkbook.getSheet("Sheet1");
-        int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
+        int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
         System.out.println("rowCount: " + rowCount);
 
-        for (int i = 0; i < rowCount+1; i++) {
+        for (int i = 0; i <= rowCount; i++) {
             Row row = sheet.getRow(i);
-            //Create a loop to print cell values in a row
             for (int j = 0; j < row.getLastCellNum(); j++) {
-                //Print Excel data in console
-                System.out.print(row.getCell(j).getStringCellValue()+"|| ");
+                Cell cell = row.getCell(j);
+                if (cell == null) {
+                    System.out.print("NULL || ");
+                    continue;
+                }
+
+                switch (cell.getCellType()) {
+                    case STRING:
+                        System.out.print(cell.getStringCellValue() + " || ");
+                        break;
+                    case NUMERIC:
+                        System.out.print(cell.getNumericCellValue() + " || ");
+                        break;
+                    case BOOLEAN:
+                        System.out.print(cell.getBooleanCellValue() + " || ");
+                        break;
+                    case FORMULA:
+                        System.out.print(cell.getCellFormula() + " || ");
+                        break;
+                    case BLANK:
+                        System.out.print("BLANK || ");
+                        break;
+                    default:
+                        System.out.print("UNKNOWN || ");
+                        break;
+                }
             }
             System.out.println();
+            inputStream.close();
         }
     }
 
