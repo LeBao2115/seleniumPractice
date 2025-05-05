@@ -1,11 +1,11 @@
-package test;
+package POM.test;
 
-import base.BaseTest;
+import POM.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.HomePage;
-import page.SeleniumHomePage;
+import POM.page.HomePage;
+import POM.page.SeleniumHomePage;
 
 public class SeleniumHomeTest extends BaseTest {
     private HomePage homePage;

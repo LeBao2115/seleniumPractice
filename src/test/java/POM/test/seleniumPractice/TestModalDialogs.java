@@ -1,14 +1,11 @@
-package test.seleniumPractice;
+package POM.test.seleniumPractice;
 
-import base.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import POM.base.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.seleniumPractice.Form;
-import page.seleniumPractice.ModalDialogs;
-import page.seleniumPractice.NestedFrame;
-import test.SeleniumHomeTest;
+import POM.page.seleniumPractice.Form;
+import POM.page.seleniumPractice.ModalDialogs;
+import POM.test.SeleniumHomeTest;
 
 public class TestModalDialogs extends BaseTest {
     private SeleniumHomeTest seleniumHomeTest;

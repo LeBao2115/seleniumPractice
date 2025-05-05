@@ -1,7 +1,6 @@
-package page.seleniumPractice;
+package POM.page.seleniumPractice;
 
-import base.BasePage;
-import org.openqa.selenium.By;
+import POM.base.BasePage;
 import org.openqa.selenium.WebDriver;
 
 public class BrowserWindows extends BasePage {

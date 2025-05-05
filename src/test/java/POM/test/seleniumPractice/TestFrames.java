@@ -1,11 +1,11 @@
-package test.seleniumPractice;
+package POM.test.seleniumPractice;
 
-import base.BaseTest;
+import POM.base.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.seleniumPractice.Frames;
-import page.seleniumPractice.Form;
-import test.SeleniumHomeTest;
+import POM.page.seleniumPractice.Frames;
+import POM.page.seleniumPractice.Form;
+import POM.test.SeleniumHomeTest;
 
 import java.util.ArrayList;
 

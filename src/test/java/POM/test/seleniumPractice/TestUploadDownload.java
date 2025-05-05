@@ -1,14 +1,13 @@
-package test.seleniumPractice;
+package POM.test.seleniumPractice;
 
-import base.BaseTest;
+import POM.base.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.seleniumPractice.Form;
-import page.seleniumPractice.UploadDownload;
-import test.SeleniumHomeTest;
+import POM.page.seleniumPractice.Form;
+import POM.page.seleniumPractice.UploadDownload;
+import POM.test.SeleniumHomeTest;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class TestUploadDownload extends BaseTest {
     private Form form;

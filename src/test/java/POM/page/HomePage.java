@@ -1,6 +1,6 @@
-package page;
+package POM.page;
 
-import base.BasePage;
+import POM.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

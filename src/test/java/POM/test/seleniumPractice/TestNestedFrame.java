@@ -1,13 +1,13 @@
-package test.seleniumPractice;
+package POM.test.seleniumPractice;
 
-import base.BaseTest;
+import POM.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.seleniumPractice.Form;
-import page.seleniumPractice.NestedFrame;
-import test.SeleniumHomeTest;
+import POM.page.seleniumPractice.Form;
+import POM.page.seleniumPractice.NestedFrame;
+import POM.test.SeleniumHomeTest;
 
 public class TestNestedFrame extends BaseTest {
     private SeleniumHomeTest seleniumHomeTest;

@@ -1,9 +1,8 @@
-package test;
+package POM.test;
 
-import base.BaseTest;
-import io.qameta.allure.Allure;
+import POM.base.BaseTest;
 import org.testng.annotations.Test;
-import page.HomePage;
+import POM.page.HomePage;
 
 public class HomeTest extends BaseTest {
     @Test

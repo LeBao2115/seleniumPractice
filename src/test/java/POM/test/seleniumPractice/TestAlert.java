@@ -1,12 +1,12 @@
-package test.seleniumPractice;
+package POM.test.seleniumPractice;
 
-import base.BaseTest;
+import POM.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.seleniumPractice.AlertPage;
-import page.seleniumPractice.Form;
-import test.SeleniumHomeTest;
+import POM.page.seleniumPractice.AlertPage;
+import POM.page.seleniumPractice.Form;
+import POM.test.SeleniumHomeTest;
 
 
 

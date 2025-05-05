@@ -1,4 +1,4 @@
-package base;
+package POM.base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

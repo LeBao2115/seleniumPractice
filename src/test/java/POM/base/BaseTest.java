@@ -1,4 +1,4 @@
-package base;
+package POM.base;
 
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
