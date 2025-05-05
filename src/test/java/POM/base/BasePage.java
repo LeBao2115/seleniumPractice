@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -40,5 +41,14 @@ public class BasePage {
     protected By dynamicLocator(String locator, String name){
         String locationXpath = String.format(locator,name);
         return By.xpath(locationXpath);
+    }
+
+    protected void DragElement(WebElement element,int xCoordinate, int yCoordinate){
+        Actions actions = new Actions(webDriver);
+        actions.clickAndHold(element)
+                .moveByOffset(xCoordinate, yCoordinate)
+                .release()
+                .build()
+                .perform();
     }
 }

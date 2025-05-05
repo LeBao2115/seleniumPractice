@@ -40,4 +40,9 @@ public class Form extends BasePage {
         clickDynamicElement(stringDropdownXpath,"Elements");
         clickDynamicElement(stringSubDropdownXpath,"Upload and Download");
     }
+
+    public void MoveToDraggablesPage(){
+        clickDynamicElement(stringDropdownXpath,"Interaction");
+        clickDynamicElement(stringSubDropdownXpath,"Dragabble");
+    }
 }
